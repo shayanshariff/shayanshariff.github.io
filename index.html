@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>shayan's homepage</title>
+<meta name="description" content="Shayan Ahmed Shariff — NLP research on evaluation and interpretability of language models.">
+<meta name="author" content="Shayan Ahmed Shariff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23151515'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='monospace' font-size='18' fill='%23FDFDFB'%3Es%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --ground: #FDFDFB;
+    --ink: #151515;
+    --muted: #6F6F6A;
+    --faint: #A3A39D;
+    --marker: #CFE2F5;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--ground); }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font-family: "Zen Kaku Gothic New", "Hiragino Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14.5px; line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .site { max-width: 44rem; padding: 3.25rem 1.5rem 6rem; margin-left: max(0rem, 8vw); }
+
+  header .name {
+    font-family: "M PLUS 1 Code", ui-monospace, monospace; font-weight: 700;
+    font-size: 15px; letter-spacing: 0.01em; margin: 0 0 0.35rem; display: inline-block;
+    color: var(--ink); text-decoration: none;
+  }
+  header .name:hover { background: none; }
+  header nav { display: flex; flex-wrap: wrap; gap: 0.2rem 1.35rem; margin: 0 0 2.6rem; font-family: "M PLUS 1 Code", ui-monospace, monospace; font-size: 13px; }
+  header nav a { color: var(--ink); }
+  header nav a[aria-current="page"] { text-decoration: none; background: linear-gradient(transparent 55%, var(--marker) 55%); }
+
+  a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:hover { text-decoration: none; background: linear-gradient(transparent 55%, var(--marker) 55%); }
+  a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+  p { margin: 0 0 1rem; }
+  .intro { display: grid; grid-template-columns: minmax(0, 1fr) 9.5rem; gap: 2.2rem; align-items: start; }
+  .bio { max-width: 34rem; }
+  .me { display: flex; flex-direction: column; gap: 0.8rem; }
+  .avatar { width: 9.5rem; height: auto; display: block; margin-top: 0.35rem; }
+  .links { display: flex; gap: 0.35rem; margin-left: -0.35rem; }
+  .links a { display: inline-flex; padding: 0.35rem; border-radius: 3px; color: var(--ink); }
+  .links a:hover { background: var(--marker); }
+  .links svg { width: 17px; height: 17px; display: block; fill: currentColor; }
+
+  .rows { display: flex; flex-direction: column; gap: 1.2rem; }
+  .row { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 1rem; }
+  .row .d { font-family: "M PLUS 1 Code", ui-monospace, monospace; font-size: 12.5px; color: var(--faint); padding-top: 0.1rem; font-variant-numeric: tabular-nums; }
+  .row .t { font-weight: 500; display: block; }
+  .row .s { color: var(--muted); display: block; font-size: 13.5px; }
+  .row .s b { color: var(--ink); font-weight: 500; }
+  .row .l { font-family: "M PLUS 1 Code", ui-monospace, monospace; font-size: 12px; color: var(--muted); display: block; margin-top: 0.1rem; }
+
+  .shelf { display: grid; grid-template-columns: repeat(auto-fill, minmax(6.8rem, 1fr)); gap: 1.8rem 1.2rem; }
+  .book { display: flex; flex-direction: column; gap: 0.5rem; }
+  .book .frame { aspect-ratio: 2 / 3; display: flex; align-items: flex-end; justify-content: flex-start; }
+  .book img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; box-shadow: 0 1px 2px rgba(21,21,21,0.18), 0 4px 10px rgba(21,21,21,0.06); transition: transform 0.15s ease; }
+  .book:hover img { transform: translateY(-3px); }
+  .book .bt { font-size: 12.5px; line-height: 1.35; font-weight: 500; }
+  .book .ba { font-size: 11.5px; color: var(--muted); font-family: "M PLUS 1 Code", monospace; }
+  @media (prefers-reduced-motion: reduce) { .book:hover img { transform: none; } }
+
+  footer { margin-top: 4.5rem; font-family: "M PLUS 1 Code", monospace; font-size: 11.5px; color: var(--faint); }
+
+  @media (max-width: 560px) {
+    .intro { grid-template-columns: 1fr; }
+    .me { order: -1; }
+    .avatar { width: 7.5rem; }
+    .row { grid-template-columns: 1fr; gap: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="site">
+  <header>
+    <a class="name" href="#home">shayan</a>
+    <nav aria-label="Site">
+      <a href="#home">home</a>
+      <a href="#research">research</a>
+      <a href="#log">log</a>
+      <a href="#shelf">shelf</a>
+    </nav>
+  </header>
+
+  <section data-page="home">
+    <div class="intro">
+      <div class="bio">
+        <p>I'm Shayan. I recently finished my master's in NLP at Université de Lorraine, where I wrote my thesis at LORIA with Joël Legrand and Camille Teruel on how language models resolve conflicts between the documentation they're given and what they've memorised.</p>
+        <p>I'm interested in evaluation and interpretability, and in making both reliable enough to trust as AI systems become more capable. Before research, I spent two years as a software engineer building LLM products.</p>
+      </div>
+      <div class="me">
+        <img class="avatar" src="me.jpg" alt="Shayan Ahmed Shariff">
+        <div class="links">
+          <a href="https://x.com/localmishima" aria-label="Twitter / X" title="@localmishima"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+          <a href="https://www.linkedin.com/in/shayan-shariff-61ba751b3/" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://scholar.google.com/citations?user=OxpiA5UAAAAJ" aria-label="Google Scholar" title="Google Scholar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg></a>
+          <a href="https://github.com/shayanshariff" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+          <a href="cv.pdf" aria-label="CV (PDF)" title="CV"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 1.5h8.6L19.5 6.4V22.5H4.5V1.5H6zm7.5 1.8H6.3v17.4h11.4V7.5h-4.2V3.3zm1.8.9v1.5h1.5L15.3 4.2zM8.2 11h7.6v1.6H8.2V11zm0 3.4h7.6V16H8.2v-1.6zm0 3.4h5v1.6h-5v-1.6z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-page="research" hidden>
+    <div class="rows">
+      <div class="row"><span class="d">2026</span><span><span class="t">Context–memory conflict circuits dilute with scale in code generation</span><span class="s"><b>Shayan Ahmed Shariff</b>, et al. · under review</span><span class="l">preprint soon</span></span></div>
+      <div class="row"><span class="d">2026</span><span><span class="t">Are Benchmarks a Source of Bias in LLMs? MMLU, CommonSenseQA and MGSM under the Microscope</span><span class="s">Fanny Ducel, <b>Shayan Ahmed Shariff</b>, Ibrahim Al Kotob, Binesh Arakkal Remesh, Lucie Digoin-Caparros, Aurélie Névéol, Karën Fort · EMNLP 2026, main conference</span><span class="l">proceedings in October</span></span></div>
+      <div class="row"><span class="d">2026</span><span><span class="t">Les benchmarks sont une source de biais des LLM : MMLU, CommonSenseQA et MGSM au microscope</span><span class="s">Fanny Ducel, Lucie Digoin-Caparros, Ibrahim Al Kotob, <b>Shayan Ahmed Shariff</b>, Binesh Arakkal Remesh, Aurélie Névéol, Karën Fort · TALN 2026</span><span class="l"><a href="https://inria.hal.science/hal-05618509">paper</a></span></span></div>
+      <div class="row"><span class="d">2024</span><span><span class="t">Bridging Language and Culture: Applying NLP Methods for Topic Classification of Couplets using BERT</span><span class="s"><b>Shayan Shariff</b>, Ali Adnan, Muhammad Qasim Pasta · ICMLC 2024</span><span class="l"><a href="https://doi.org/10.1145/3651671.3651694">paper</a></span></span></div>
+    </div>
+  </section>
+
+  <section data-page="log" hidden>
+    <div class="rows">
+      <div class="row"><span class="d">2026-09</span><span>Frontier AI Security Training (FAST), Singapore AI Safety Hub</span></div>
+      <div class="row"><span class="d">2026-08</span><span>Defended my master's thesis at Université de Lorraine</span></div>
+      <div class="row"><span class="d">2026-08</span><span>EMNLP paper accepted to the main conference</span></div>
+      <div class="row"><span class="d">2026-07</span><span>Top 10% at Apart Research's Secret Loyalties hackathon: <a href="https://apartresearch.com/project/blind-auditing-for-secret-loyalties-with-calibrated-positive-controls-i1n7">blind auditing for secret loyalties</a></span></div>
+      <div class="row"><span class="d">2026-07</span><span>BlueDot Impact, technical AI safety course</span></div>
+      <div class="row"><span class="d">2026-03</span><span>Research internship at LORIA and Steerway, Nancy</span></div>
+      <div class="row"><span class="d">2025-11</span><span>Best Poster Award, Forum des Sciences Cognitives &amp; TAL</span></div>
+      <div class="row"><span class="d">2025-06</span><span>Research internship at LORIA on bias in LLM benchmarks</span></div>
+      <div class="row"><span class="d">2022–24</span><span>Software engineer at Alt Ventures, building LLM voice products</span></div>
+    </div>
+  </section>
+
+  <section data-page="shelf" hidden>
+    <div class="shelf">
+      <div class="book"><div class="frame"><img src="covers/setting-sun.jpg" alt="The Setting Sun cover" loading="lazy"></div><span class="bt">The Setting Sun</span><span class="ba">Osamu Dazai</span></div>
+      <div class="book"><div class="frame"><img src="covers/sound-of-waves.jpg" alt="The Sound of Waves cover" loading="lazy"></div><span class="bt">The Sound of Waves</span><span class="ba">Yukio Mishima</span></div>
+      <div class="book"><div class="frame"><img src="covers/killing-commendatore.jpg" alt="Killing Commendatore cover" loading="lazy"></div><span class="bt">Killing Commendatore</span><span class="ba">Haruki Murakami</span></div>
+      <div class="book"><div class="frame"><img src="covers/labyrinths.jpg" alt="Labyrinths cover" loading="lazy"></div><span class="bt">Labyrinths</span><span class="ba">Jorge Luis Borges</span></div>
+      <div class="book"><div class="frame"><img src="covers/house-of-leaves.jpg" alt="House of Leaves cover" loading="lazy"></div><span class="bt">House of Leaves</span><span class="ba">Mark Z. Danielewski</span></div>
+      <div class="book"><div class="frame"><img src="covers/antimemetics.jpg" alt="There Is No Antimemetics Division cover" loading="lazy"></div><span class="bt">There Is No Antimemetics Division</span><span class="ba">qntm</span></div>
+      <div class="book"><div class="frame"><img src="covers/crush.jpg" alt="Crush cover" loading="lazy"></div><span class="bt">Crush</span><span class="ba">Richard Siken</span></div>
+      <div class="book"><div class="frame"><img src="covers/howl.jpg" alt="Howl and Other Poems cover" loading="lazy"></div><span class="bt">Howl and Other Poems</span><span class="ba">Allen Ginsberg</span></div>
+      <div class="book"><div class="frame"><img src="covers/meatless-days.jpg" alt="Meatless Days cover" loading="lazy"></div><span class="bt">Meatless Days</span><span class="ba">Sara Suleri</span></div>
+      <div class="book"><div class="frame"><img src="covers/east-of-eden.jpg" alt="East of Eden cover" loading="lazy"></div><span class="bt">East of Eden</span><span class="ba">John Steinbeck</span></div>
+      <div class="book"><div class="frame"><img src="covers/catcher.jpg" alt="The Catcher in the Rye cover" loading="lazy"></div><span class="bt">The Catcher in the Rye</span><span class="ba">J. D. Salinger</span></div>
+    </div>
+  </section>
+
+  <footer>last updated september 2026</footer>
+</div>
+
+<script>
+(function () {
+  var pages = ['home', 'research', 'log', 'shelf'];
+  function route() {
+    var id = (location.hash || '#home').slice(1);
+    if (pages.indexOf(id) === -1) id = 'home';
+    document.querySelectorAll('[data-page]').forEach(function (s) { s.hidden = s.getAttribute('data-page') !== id; });
+    document.querySelectorAll('header nav a').forEach(function (a) {
+      if (a.getAttribute('href') === '#' + id) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', route);
+  route();
+})();
+</script>
+</body>
+</html>
