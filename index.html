@@ -3,10 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>shayan's homepage</title>
+<title>shayan</title>
 <meta name="description" content="Shayan Ahmed Shariff — NLP research on evaluation and interpretability of language models.">
 <meta name="author" content="Shayan Ahmed Shariff">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23151515'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='monospace' font-size='18' fill='%23FDFDFB'%3Es%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
 <style>
   :root {
@@ -160,6 +162,7 @@
     document.querySelectorAll('header nav a').forEach(function (a) {
       if (a.getAttribute('href') === '#' + id) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
     });
+    document.title = id === 'home' ? 'shayan' : 'shayan · ' + id;
     window.scrollTo(0, 0);
   }
   window.addEventListener('hashchange', route);
