@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shayanshariff.github.io/sitemap.xml
